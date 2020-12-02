@@ -1,6 +1,6 @@
 import math
 
-data = open("Day_01_input", "r")
+data = open("Day_01a_input", "r")
 line_array = []
 lines = data.read().splitlines()
 
@@ -25,9 +25,9 @@ while line_array[i] <=2020 and i < l-1 :
 counter = 0
 i = 0
 while line_array[i] <=2020 and i < l-1 :
-    j = 0
+    j = i+1
     while line_array[j] <=2020-line_array[i] and j < l :
-        k = 0
+        k = j+1
         while line_array[k] <= 2020 - line_array[i] - line_array[j] and k < l :
             counter = counter+1
             if line_array[i] +line_array[j] +line_array[k]  == 2020 :
@@ -37,3 +37,4 @@ while line_array[i] <=2020 and i < l-1 :
     i = i + 1
 
 print(counter)
+
