@@ -1,10 +1,9 @@
-trim = lambda x : x.replace("\n", "")
-
-def txt_to_list(file) :
-    global trim
-    with open(file,"r+") as stream :
-        my_list = stream.readlines()
-    my_list = list(map(trim,my_list))
+def txt_to_list(filename) :
+    my_list = []
+    for line in open(filename) :
+        if len(line) > 0 and line[-1] == '\n' :
+            line = line[:-1]
+        my_list.append(line)
     return my_list
 
 passwords = txt_to_list("Day_02_input")
